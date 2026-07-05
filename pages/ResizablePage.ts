@@ -7,9 +7,9 @@ export class ResizablePage {
 
   constructor(page: Page) {
     this.page = page;
-    // #resizable is the box WITHOUT min/max restriction
-    this.resizableBox = page.locator('#resizable');
-    this.resizeHandle = this.resizableBox.locator('.react-resizable-handle');
+    // Target the resizable box with restriction (the one with visible handle)
+    this.resizableBox = page.locator('#resizableBoxWithRestriction');
+    this.resizeHandle = this.resizableBox.locator('.react-resizable-handle-se');
   }
 
   async goto() {
@@ -34,13 +34,19 @@ export class ResizablePage {
     const startX = handleBox.x + handleBox.width / 2;
     const startY = handleBox.y + handleBox.height / 2;
 
- await this.page.mouse.move(startX, startY);
-await this.page.mouse.down();
-await this.page.mouse.move(startX + 2, startY + 2); // tiny nudge to arm the drag state
-await this.page.waitForTimeout(200);
-await this.page.mouse.move(startX + deltaX, startY + deltaY, { steps: 25 });
-await this.page.waitForTimeout(200);
-await this.page.mouse.up();
+    // Move to handle and start drag
+    await this.page.mouse.move(startX, startY);
+    await this.page.mouse.down();
+    
+    // Perform smooth drag with many steps for react-resizable to detect
+    await this.page.mouse.move(startX + deltaX, startY + deltaY, { steps: 50 });
+    
+    // Small pause before release to ensure library processes final position
+    await this.page.waitForTimeout(300);
+    await this.page.mouse.up();
+    
+    // Wait for resize to complete
+    await this.page.waitForTimeout(300);
   }
 
   async expectSizeIncreasedFrom(originalWidth: number, originalHeight: number) {

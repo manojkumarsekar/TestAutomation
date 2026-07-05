@@ -1,5 +1,7 @@
 # Playwright Test Automation – DemoQA
 
+**Author:** Manoj Kumar
+
 ![Playwright Tests](https://github.com/manojkumarsekar/TestAutomation/actions/workflows/playwright.yml/badge.svg)
 
 Data-driven UI automation suite built with **Playwright + TypeScript**, using
@@ -95,9 +97,34 @@ npx playwright show-report
 
 ## CI
 
-Every push to `main` runs the full suite on Chromium via GitHub Actions
+**GitHub Actions** (`.github/workflows/playwright.yml`)
+Every push to `main` and pull requests run the full test suite on Chromium via GitHub Actions
 (see badge above). The HTML report is uploaded as a workflow artifact for
 30 days, downloadable from the Actions tab.
+
+**Azure DevOps** (`azure-pipelines.yml`)
+Alternative CI/CD pipeline configured for teams using Azure DevOps. Provides
+equivalent functionality with Azure-native artifact storage and reporting.
+
+**What's validated:**
+- All 14+ test scenarios (forms, widgets, dialogs, API, etc.)
+- Page Object Model structure and fixture integrity
+- Data-driven test parameterization (JSON & CSV)
+- Chromium browser with full dependencies
+- Accessibility-first selectors (`getByRole`, `getByLabel`, etc.)
+- API integration and response handling
+
+**Local CI simulation:**
+```bash
+# Run full suite (all projects, all browsers)
+npx playwright test
+
+# Run specific test suite
+npx playwright test tests/practiceForm.spec.ts
+
+# Run and debug with UI
+npx playwright test --ui
+```
 
 ## Design notes
 
