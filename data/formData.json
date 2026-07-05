@@ -1,0 +1,28 @@
+[
+  {
+    "firstName": "Manojkumar",
+    "lastName": "Sekar",
+    "email": "manoj.ms4@test.com",
+    "gender": "Male",
+    "mobile": "9941142435",
+    "dateOfBirth": "02 Mar 1988",
+    "subjects": ["Maths", "English", "Science"],
+    "hobbies": ["Sports"],
+    "currentAddress": "Chennai",
+    "state": "NCR",
+    "city": "Delhi"
+  },
+  {
+    "firstName": "Priya",
+    "lastName": "Raman",
+    "email": "priya.raman@example.com",
+    "gender": "Female",
+    "mobile": "9876543210",
+    "dateOfBirth": "15 Jul 1992",
+    "subjects": ["Physics", "Hindi"],
+    "hobbies": ["Reading", "Music"],
+    "currentAddress": "Bangalore",
+    "state": "NCR",
+    "city": "Delhi"
+  }
+]
