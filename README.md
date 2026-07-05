@@ -4,8 +4,9 @@
 
 Data-driven UI automation suite built with **Playwright + TypeScript**, using
 the **Page Object Model**. Targets [demoqa.com](https://demoqa.com) as a
-realistic playground covering forms, native and custom dropdowns, browser
-tabs/windows, JS dialogs, and drag interactions.
+comprehensive playground covering 14+ test scenarios including forms, widgets,
+dropdowns, browser windows, dialogs, drag interactions, date pickers, tooltips,
+and API integration.
 
 ## Highlights
 
@@ -18,6 +19,19 @@ tabs/windows, JS dialogs, and drag interactions.
   - New tab / new window handling via `context.waitForEvent('page')`
   - React-select custom dropdowns vs. native multi-`<select>` elements
   - Drag-and-drop with jQuery UI (stepped mouse movement, not native HTML5 DnD)
+
+## Skills Demonstrated
+
+- **UI Interaction Patterns**: form inputs, buttons, dropdowns, checkboxes, radio buttons, tabs, menus, sliders
+- **Advanced Interactions**: drag-and-drop, hover states, context menus, keyboard navigation
+- **Date/Time Handling**: calendar pickers, time selectors, date validation
+- **Dialog Handling**: alert, confirm, and prompt dialog interception
+- **Browser Management**: new tabs, new windows, context switching
+- **API Testing**: REST API integration, response validation
+- **Data-Driven Testing**: parameterized runs from JSON and CSV
+- **Test Architecture**: Page Object Model, custom fixtures, reusable locators
+- **TypeScript**: strong typing, interfaces, inheritance
+- **Accessibility Selectors**: semantic role-based queries (`getByRole`, `getByText`, `getByLabel`)
 
 ## Project structure
 
@@ -35,10 +49,19 @@ tests/        Spec files
 | Page | What it demonstrates |
 |---|---|
 | Practice Form | text inputs, radio/checkbox (hidden-input pattern), date picker, dropdowns, data-driven runs |
-| Browser Windows | new tab, new window, new window with message |
-| Alerts | native JS `alert()` dialog interception |
-| Select Menu | react-select single/multi dropdown + native multi-select |
-| Droppable | drag-and-drop |
+| Browser Windows | new tab, new window, new window with message handling |
+| Alerts | native JS `alert()`, `confirm()`, `prompt()` dialog interception |
+| Select Menu | react-select single/multi dropdown + native multi-select elements |
+| Droppable | drag-and-drop interactions with jQuery UI |
+| Menu | context menu and sub-menu navigation |
+| Tabs | tab switching and content verification |
+| Resizable | resizable element interactions |
+| Tool Tips | hover interactions and tooltip visibility validation |
+| Progress Bar | button interactions and progress state verification |
+| Slider | range input value manipulation |
+| Date Picker | date and time selection from calendar pickers |
+| Book Store API | REST API integration and response handling |
+| Text Book | complex table navigation and data retrieval |
 
 ## Setup
 
